@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //What is object in javascript
+        //This are javascript data structure which allow us to store a collection of data
+
+        //Example
+        const product = {
+            //The name and price are called property, while the string and number are called value
+            //Combining the two are called property-value pair
+            name: "Phone",
+            price: 1000,
+        }
+        console.log(product)
+        console.log(product.name)
+        console.log(product.price)
+
+        //Reassigning a value to the object 
+        product.name = "Tv"
+        product.price = 2000
+        console.log(product.name)
+        console.log(product.price)
+
+        //you Can add new value to an object
+        product.newName = "Laptop"
+        product.newPrice = 5000
+        console.log(product.newName)
+        console.log(product.newPrice)
+
+
+        //JSON MEANING 
+        //Javascript Object Notation
+        //Reason to use json insteasd of javascript object
+        //(1)Javascript object only makes sense in javascript , while Json can be understood by almost all language
+
+        //Json is used when we send data between computers
+        //Json is used when we store data
+
+        //Json.stringify will change a javascript object to json 
+        //While json.parse change a json back to javascript object
+
+
+        //------Localstorage Meaning------
+        //This save values more permanently, while variable saves values temporary
+        //And Local Storage only support strings, when any value that is not a string
+        //we have to convert it to string using json.stringify
+    </script>
+</body>
+</html>

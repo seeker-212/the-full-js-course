@@ -1,0 +1,31 @@
+.head{
+    color: gray;
+    font-size: larger;
+    font-weight: bold;
+}
+.btn-1{
+    border: 1px solid gray;
+    padding: 10px 30px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+.head2{
+    color: gray;
+    font-size: larger;
+    font-weight: bold;
+}
+
+input{
+    padding: 9px 15px;
+    outline: none;
+}
+
+.btn-2 {
+   padding: 10px 15px;
+   color: white;
+   background-color: rgb(12, 177, 12);
+   border: none;
+}

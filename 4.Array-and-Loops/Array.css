@@ -1,0 +1,40 @@
+.text-input{
+    padding: 10px 15px;
+    outline: none;
+}
+
+.date{
+    padding: 10px 15px;
+    outline: none;
+}
+
+.btn {
+    padding: 13px 25px;
+    background-color: rgb(15, 189, 15);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.empty, .container{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.container{
+    margin-bottom: 10px;
+}
+
+.empty{
+    align-items: center;
+}
+
+.delete {
+    padding: 13px 25px;
+    background-color: rgb(236, 18, 18);
+    color: white;
+    border: none;
+    cursor: pointer;
+}

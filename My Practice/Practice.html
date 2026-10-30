@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button
+    onclick="
+    if (randomMove >= 0 && randomMove < 1/3) {
+        computerMove = 'Rock'
+    }else if (randomMove >= 1/3 && randomMove < 2/3) {
+        computerMove = 'Paper'
+    }else if(randomMove >= 2/3 && randomMove < 1) {
+        computerMove = 'Scissors'
+    }
+    
+
+    if (computerMove === 'Rock') {
+        result = 'Ties'
+    }else if(computerMove === 'Paper') {
+        result = 'You Lose'
+    }else if(computerMove === 'Scissors') {
+        result = 'You Win'
+    }
+
+    alert(`Your Move is Rock and computer Move is ${computerMove}, ${result}`)
+    "
+    >Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+
+    <script>
+        const randomMove = Math.random()
+        let computerMove = ''
+        let result = ''
+    </script>
+</body>
+</html>

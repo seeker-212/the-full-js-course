@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //What is a Function
+        //A function lets us reuse code or its a block of code that perform a specific task
+
+        //Es5 way of writing function
+        function adding(){
+
+        }
+
+        //Es6 way of eriting function
+        const adding = () => {
+
+        }
+
+        //A return statement lets us get a value out of a function
+        function add (a, b) {
+            return a + b
+            
+        }
+        console.log(add(2,3))
+
+        //Real example of functions
+        const myFunction = (a, b) => {
+            return a * b
+        }
+        const res = myFunction(2, 4)
+        console.log(res)
+
+        /*
+            ------ Function Declaration ------
+            function sayHello(name) {
+                console.log(`Hello ${name}`)
+            }
+
+            sayHello('Henry')
+
+            ------ Function Expression ------
+            const sayHello = function (name){
+                console.log(`Hello ${name}`)
+            }
+
+            sayHello('Henry')
+        */
+
+        /* 
+             ------ Call Back Function ------
+             When we provide function as an argument to other function that function is know as call back
+
+             E.g function showCallfunc (fn) {
+                    const value = 10
+                    fn(value)
+             }
+             showCallfunc(function(value){
+                console.log(value)
+             })
+        */
+
+       /*
+                ------ Destructuring ------
+            This allows us to unpack values from data-structure (arrays, objects) into seperate distinct variables
+
+            ---Destructuring an array---
+            E.g const arr = ['one', 'two', 'three', 'four']
+                const [one] = arr
+
+            ---Destructuring an object
+            E.g const student = {name: 'henry', postion: 'first', rollNo: 27}
+                const {name} = student
+
+            ---Function Destructuring---
+            E.g const person {
+                name: 'henry',
+                age: '25',
+                country: 'Naija'
+            };
+
+            function printPersonInfo({name, age, country}) {
+                console.log('Name: ${name}')
+                console.log('Age: ${age}')
+                console.log('Country: ${country}')
+            }
+            printPersonInfo(person)
+       
+       */
+        
+    </script>
+</body>
+</html>

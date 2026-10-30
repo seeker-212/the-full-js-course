@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //WHAT IS AN ARRAY
+        //  This is another type of value which represents a list of value
+
+        //Example
+        const fruits = ['apple', 'mango', 'pinapple', 'pawpaw']
+        console.log(fruits)
+
+        //To get a particular item in a array 
+        //The number that show the position of an array is called the (index)
+        //it reveals the position of an item in an array
+        console.log(fruits[0])
+
+        //To reassign another value into a array
+        console.log(fruits[0] = 'cashew')
+
+        //Different values can be stored inside an array, like...
+        const mile = [1, 'hello', true, {name: 'mark'}, [1, 2]]
+        console.log(mile)
+        //So array is a special type of an object
+
+        //to check if some value is an array
+        console.log(Array.isArray(mile))
+
+
+        /*Useful properties of an array
+            1) .length => This will display the length of an array (eg. mile.length)
+            2) .push => This adds a value to the end of an array (eg. mile.push('biscuit'))
+            3) .splice => This remove a value from an array, and it is written with the index and the number of
+            value to remove (eg. mile.splice(0, 1))
+            4) .concat => join two or more arrays and return a result
+            5) .includes => check if an array contain a specific element
+            6) .unshift => add a new element to the begining of an array and return the new length of an array
+            7) .shift => removes the first element of an array and return the removed element
+            8) .pop =>  removes the last element of an array and return the removed element
+            9) .sort => sorts the element alphabetically in strings and in ascending order
+            10) .slice => selects the part of an array and return the new array
+        */
+
+       //WHAT ARE LOOPS
+       //This let us run some code over and over again
+       // Two types of Loops (For and while Loops)
+
+       // ----While Loop----
+        let i = 1 // Loop Variable
+
+       while (i <= 5) { //Loop Condition
+        console.log(i) //Loop Body
+        i ++ //Increment Step,  without this increment step the loop will keep going forever
+       }
+       //Each time the loop is been runned it is called an iteration
+
+       //----For Loop----
+       //A for loop variable, conditions, increment step are all in one bracket
+       //For loops is just a shorter version of a while loop
+       for(let i = 1; i <= 5; i++) {
+        console.log(i)
+       }
+
+       //While VS For loops
+       /*
+       Standard Loop = use For Loop
+       Non Standard Loop = use While Loop
+
+
+            ----For-in Loop----
+          This is used to iterate over the enumerate properties of an object. it is a way to loop through
+          the keys of an object
+          E.g Let list = ['one', 'two', 'three']
+              for (let i in list){
+                console.log(`${i}: ${list[i]}`)
+              }
+
+            ----For-of Loop----
+            This is an easy way to loop over element in iterable object like arrays, strin, maps, sets and more.
+            E.g let peoples = ["henry", "Mary", "alex", "brad"]
+                for(let i of peoples){
+                  console.log(peoples)
+                }
+
+            ----For-each Loop----
+            This function gets called one time for every element in the array.
+            E.g const words = ['hello', 'hi', 'speak', 'talk', 'hola']
+                const wordy = words.forEach((word, index, arr) => {
+                  arr[index] = word[0].upperCase + word.substring(1)
+                })
+                console.log(words)
+       */
+
+
+      //Looping through an Array
+      //We use a loop to go through each value of an array & do something with each value
+      const myArray = [
+        'henry',
+        'john',
+        'mike',
+      ]
+
+      for(let i = 0; i < myArray.length; i++) {
+        const value = myArray[i]
+        console.log(value)
+      }
+
+
+      //Accumulator Pattern
+      //Let say i want to calculate the total number of a value in an array [1, 1, 3]
+      //That is where the accumulator pattern comes in
+      /*   Steps for an acculator pattern 
+          1) Create a Variable to store the result
+          2) Loop through the array and update the result
+      */
+      const nums = [1, 1, 3]//Creating the variable
+      let total = 0
+
+      for(let i = 0; i < nums.length; i++) {//Loop through the array and update the result
+        const num = nums[i]
+        total += num
+
+        console.log(total)
+      }
+
+      //Another Array method to take note of
+            //1) .filter()
+            //2) .map()
+            //3) .find()
+
+            //How .filter() works
+            const ary = [1, -3, 5]
+
+            //.filter function takes 2 parameters (value, index)
+            //filter create new array and if returns is true, it will put the value in new array
+            //and if returns is false, it will not put the value in new array
+            console.log(ary.filter((value, index) => {
+              if (value >= 0) {
+                return true
+              }else{
+                return false
+              }
+              
+            })) 
+
+            //How .map() works
+            //The map method creates a new array populated with the results of calling a provided function
+            //on every element in the calling array.
+            const arys = [1, 1, 3]
+
+            //.map function takes 2 parameters (value, index)
+            //map create new array and whatever we returns is added to the new array
+            //map will transform an array into another array
+            console.log(arys.map((value, index)=> {
+              return value * 2
+            }))
+
+            /*
+                How .find() works
+                The find() method is another built-in array helper in javascript that allows you to find
+                the first element in an array that matches a specific condition. it returns the vlue of the first
+                element that satisfies the given testing dunction, or undefined if no element is found.
+
+                E.g const peoples = [
+                  {name: 'henry', age: 25},
+                  {name: 'Pega', age: 25},
+                  {name: 'Emeka', age: 25},
+                ]
+
+                const res = peoples.find(person => person.name === 'henry')
+                console.log(res)
+            */
+
+           /////////////////////////////////////////////////////////////////////
+           /*
+                            ----The every() and some() Method
+              The every() method test weather all elements in the array pass the condition specified by the provided
+              callback function. it return true if the callback function return true for every element, and false
+              if any element fails the condition.
+
+              E.g const peoples = ['huxn', 'john', 'alex']
+                  const res = peoples.every(pep => pep.length === 4)
+                  console.log(res)
+
+              -------------------------------------------------------------------------
+
+              The some() method test whether at least one element in the array passes the condition specified by the 
+              provided callback function. it returns true if the callback function returns true for at least one
+              element and false if no element passes the condition.
+              E.g const speakers = ['sony', 'jbl', 'oraimo']
+                  const res = speakers.some(spe => spe < 3)
+                  console.log(res)
+           */
+            ///////////////////////////////////////////////////////////////////////////////////
+
+            /*
+              The reduce() method applies the reducer function to each elelment of an array accumulating the results
+              into a single value. it is often used to perform calculation and aggregations on array elements and
+              simplify the array into a single value.
+              It take an initial value and a callback function e.g (p, cb)
+              E.g const numbers = [1,2,3,4,5,6,7,8,9,0]
+                  const sum = numbers.reduce(( p, cb) => {
+                    return p + cb
+                  })
+                  console.log(sum)
+            */
+
+           //////////////////////////////////////////////////////////////////////////////////////////////////////
+           /*
+                    ----------- Map() Data Structure -----------
+            This is a built-in data structure introduced in (Es6) that allows you to store key-value pairs where
+            both the key and values can be of any data type. it is similar to an object, but with a few 
+            differences.
+
+            keys can be of any data type: unlike object, where keys are limited to strings and symbols, Map 
+            allows you to use data type as keys, including numbers, boolean, objects, and even other Map
+            instances.
+
+            E.g const map = new Map()
+                const keyOne = 'string'
+                const keyTwo = {}
+                const keyThree = function() {}
+
+                map.set(keyOne, 'here is value of key one')
+                map.set(keyTwo, 'here is value of key two')
+                map.set(keyThree, 'here is value of key three')
+                console.log(map)
+                --------------------------
+                You can also do this
+                console.log(map.keys())
+                console.log(map.values())
+                console.log(map.delete(keyTwo))
+                console.log(map.size)
+                --------------------------
+                )))Using the Map data structure with loops(((
+                for(let [key, value] of map) {
+                  console.log(`${key} --- ${value}`)
+                }
+
+                for(let key of map.keys()){
+                  console.log(key)
+                }
+
+                for(let value of map.values){
+                  console.log(value)
+                }
+           */
+          //////////////////////////////////////////////////////////////////////////////////////////////////////
+          /*
+              ----------- Set Data Structure -----------
+          Set is a built-in data structure introduces in (Es6) that represent a collection of unique values.
+          unlike arrays, Set allows you to store only unique values, which means duplicate values are
+          automatically removed. Each value can occur only once within a set.
+
+          Set Objects are useful when you need to store a list of unique elements and quickly check for the existence
+          of a specific value.
+
+          E.g const initialValue = [1, 2, 3]
+              const set = new Set(initialValue)
+              console.log(set)
+          Another E.g const mySet = new Set()
+                      mySet.add('apple')
+                      mySet.add('banana')
+                      mySet.add('orange')
+                      mySet.delete('apple')
+                      mySet.clear()
+                      console.log(mySet.has('apple'))
+          */
+         ////////////////////////////////////////////////////////////////////////////////////////
+         /*
+                ----------- Symbols in Javascript -----------
+          Symbols are unique and immutable primitive data type introduced in (Es6). A symbol is often used as
+          an identifier for object properties to avoid potential naming conflicts.
+
+          E.g const mySymbols = Symbol('Custom Symbol')
+              console.log(mySymbols)
+
+              ----------------------------------
+              ---Comparing Symbols---
+          const mySymbol1 = Symbol('name')
+          const mySymbol2 = Symbols('name')
+          console.log(mySymbol1 === mySymbol2)
+         */
+    </script>
+</body>
+</html>

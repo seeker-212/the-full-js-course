@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- First Variable Project -->
+    <h1>Cart Quantity</h1>
+    <button
+      onclick="
+    
+    console.log(`Cart Quantity: ${num}`)
+    "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+    num = num + 1
+    console.log(`Cart Quantity: ${num}`)
+    "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+    num = num + 2
+    console.log(`Cart Quantity: ${num}`)
+    "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+    num = num + 3
+    console.log(`Cart Quantity: ${num}`)
+    "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+    num = 0
+    console.log('Cart was reset')
+    console.log(`Cart Quantity: ${num}`)
+    "
+    >
+      Reset Cart
+    </button>
+    <script>
+      let num = 0;
+      //NEW TOPIC
+      //   //Basic Variable
+      //   let num1 = 2;
+      //   let num2 = 3;
+      //   console.log(num1 + num2);
+
+      //   //Reassigning Varibles
+
+      //   let obi = "loves ada";
+      //   console.log(obi);
+
+      //   //Reassign
+      //   obi = "Loves Jenet now";
+      //   console.log(obi);
+
+    //   N:B assigning a variable with const means you cant Reassign the variable
+    // const num2 = 1
+    // num2 = 3
+    // console.log(num2)
+    //The above expression will throug in error
+    //(--Value Re-assignment SHORTCUT--
+    //  += 2 (variable = variable + 2)
+    //  -= 2 (variable = variable - 2)
+    //  *= 2 (variable = variable * 2)
+    //  /= 2 (variable = variable / 2)
+    //  ++   (variable = variable + 1)
+    //  --   (variable = variable - 1)
+    //  )
+
+
+    /*
+    ----Learning additional concept in javascript----
+            ---concatenation---
+            let firstName = 'Henry';
+            let lastName = 'Emeka'
+
+            E.g using concat method ( let fullName = firstName.concat('Chukwumeka') )
+
+            ---Append---
+            E.g firstName += 'Pega'
+
+            ---Length---
+            E.g firstName.length
+
+            ---Cases---
+            this will change the words to upper or lower case
+            E.g firstName.toLowerCase()
+            E.g firstName.toUpperCase()
+
+            ---Slice---
+            this will slice the first alphabet from the firstName variable
+            E.g firstName.slice(0)
+
+            ---Split & Join---
+            split will seperate each alphabet in the firstName variable then store them in an array, while join will
+            do the opposite of split.
+            E.g firstName.split('')
+            E.g firstName.join('')
+
+            ---includes---
+            The will return a boolean statement true or false
+            E.g firstName.includes('e')
+
+            ---Trim---
+            The will erase any space in the string
+            E.g firstName.trim()
+
+
+            ------Type Conversion in javascript------
+            This will show the type of value given
+            E.g let num = 9
+                typeof num
+
+            ---How to convert string to number---
+            this will convert num to string, so instead of 9 it will be '9'
+            num = parseInt(num)
+
+            ---How to convert number to string---
+            num = num.toString()
+
+
+          ------ Variable Scope ------
+          scope in js refers to the current context of code, which determines the accessibility of varaible
+          to javascript.
+          ------ Two types of scope ------
+          Global scope variables are thos declared outside of a block
+          Local scope variables are those declared inside a block
+    */
+    </script>
+  </body>
+</html>

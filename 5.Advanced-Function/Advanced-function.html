@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Advanced Function
+
+      //How simple function works
+      function greetings() {
+        console.log('hello')
+      }
+      //Calling the function
+      greetings()
+
+      //It is said that functions are value, which means we can save a function in a variable
+      //E.g
+      const function1 = function () {
+        console.log('hello2')
+      }
+
+      console.log(function1)
+      function1()
+
+      //function can be saved as an object also
+      const object1 = {
+        name: 'Adanna',
+        class: 'Fool',
+
+        func: function() {
+            console.log('hello3')
+        }
+        
+      }
+      object1.func()
+      //Saving a function inside an object is called a method
+
+      //We can pass a value into a function
+      function money (params) {
+        console.log(params)
+      }
+
+      money(2)
+
+      //Because function are values, We can pass a function into a function
+      function run(params) {
+        params()
+      }
+      run(function(){
+        console.log('hello4')
+      })
+      //The above code will take the function and save it inside the params and that will enable us to us 
+      //params as a variable, and since the params contain a function we can easily just call it as a function
+      //And the function been passed in to another is called a callback function
+
+      //----Learning about the built in javascript functions (setTimeout())----
+      //setTimeout() takes two parameter, first parameter is the function we want to run in the future and 
+      //second parameter is how long to wait before running this function (a number in miliseconds)
+      //1000 miliseconds = 1 second
+      setTimeout(function(){
+        console.log('timeout')
+      }, 5000)
+
+      //----Learning about the built in javascript functions (setInterval())----
+      //setInterval() takes two parameter, first parameter is the function we want to run in the future and 
+      //second parameter is how long to wait before running this function (a number in miliseconds)
+      //1000 miliseconds = 1 second
+      setInterval(function(){
+        console.log('interval')
+      }, 5000)
+
+      //Asynchronous code, this won't wait for a line to finish before going to the next line
+      //Synchronous code, this will wait for one line to finish before going to the next line
+
+
+      //Ways of looping through an array
+      //For Loop and While Loop or forEach looping method
+      const todos = [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ]
+
+      todos.forEach((element, index) => {
+        console.log(index)
+        console.log(element)
+      });
+
+      //The forEach Method is the preferredway to loop through an array
+
+
+
+             //----------(Advanced Function con't)----------
+             /*
+             Differnces between arrow function and regular function
+             1) Arrow function have shortcut, while regular dont have  shortcuts
+             */
+
+            
+
+            //----What is a Closure----
+            /* 1) if a function has access to a value
+               2) it will always have access to that value
+               3) value gets packaged together with the function 
+            */
+            
+
+            // Main idea of Javascript
+            // 1) Sava data
+            // 2) Generate the HTML
+            // 3) Then Make HTML interactive
+
+            
+    </script>
+  </body>
+</html>

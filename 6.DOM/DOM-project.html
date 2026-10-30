@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./DOM.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="head">YouTube Subscribe Button</p>
+
+    <button class="btn-1">Subscribe</button>
+
+    <p class="head2">Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of Orders" onkeydown="
+    if (event.key === 'Enter') {
+        calculateTotal()
+    }">
+    <button class="btn-2" onclick="calculateTotal()">Calculate</button>
+    <p class="js-p"></p>
+
+    <script>
+    const calculateTotal = () => {
+        const inputEl = document.querySelector('input')
+
+        //Whenever a value is gotten from a dom like it is states below, that value is a string
+        //So we have to convert it to Number
+        let cost = Number(inputEl.value )
+        if (cost < 40) {
+            cost += 10
+        }
+
+        document.querySelector('.js-p').innerHTML = `$${cost}`
+    }
+
+      const subScribe = () => {
+        const buttonEl = document.querySelector(".btn-1");
+        buttonEl.addEventListener("click", () => {
+          buttonEl.innerText =
+            buttonEl.innerText === "Subscribe" ? "Subscribed" : "Subscribe";
+            if (buttonEl.innerText === "Subscribed") {
+              buttonEl.style = 'background-color: red; color: white;'
+            }else {
+              buttonEl.style = 'background-color: white; color: black;'
+            }
+        });
+      };
+      subScribe()
+      /*Here are some of the mostly used Event Listeners
+      onClick = click
+      onKeydown = key press
+      onscroll = scrolling
+      onmouseenter = hovering over
+      onmouseleave = stop hovering over
+      */
+    </script>
+  </body>
+</html>

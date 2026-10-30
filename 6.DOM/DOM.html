@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola Senorita</h1>
+    <button>Back</button>
+    <script>
+        //THE MEANING OF DOM
+        //(Document object model)
+        //The document object represents / models the webpage
+
+        //Example
+        document.body.innerHTML = 'Hola Senor'
+        //The above code will change the page from hola senorita to hola senor
+        //because we are manipulating the page.
+        //innerHTML gives us control of all the html insid the body
+
+        //Document.queryselector(), this let us get any element from the page and put it inside javascript
+        document.querySelector('button').innerHTML = 'Front'
+        //Two important attribute in Dom 
+        //getAttribute and setAttribute
+
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        /*
+                  ---------- Important Method in Dom ----------
+            1) createElement()
+            2) appendChild()
+            3) removeChild()
+            4) append()
+            5) remove()
+            6) prepend()
+            7) insertBefore()
+             
+        */
+
+       /////////////////////////////////////////////////////////////////////////////////////////////
+
+       /*
+            ------ DOM Event ------
+        Javascript interaction with HTML is handled through events that occur when the user or the browser
+        manioulate a page. when th epage load, it is called an event , when the user click a button, that 
+        click too is an Event.
+
+        ---Useful Mouse Events---
+        click = This event occurs when the user clicks on an element 
+        contextmenus = This event occurs when the user right-clicks on an element to open a context menu
+        dblclick = This event occur when the user double-clicks on an element
+        mousedown = This events occurs when the user presses a mouse button over an element
+        mouseenter = This event occurs when the pointer is moved onto an element
+        mouseleave = This events occurs when th epointer is moved out of an element
+        mousemove = This event occurs when the pointer is moving while it is over an element
+        mouseout = The event occurs when a user moves the mouse pointer out of an element or it children
+        mouseover = The event occurs when the pointer is moved onto an element, or one of it's children
+        mouseup = This events occurs when a user release a mouse buttton over an element
+       
+       */
+    </script>
+</body>
+</html>

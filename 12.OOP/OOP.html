@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        ---object oriented programming---
+        this is another style of programming(another way to write code)
+        this is basically organizing our code into an object.
+
+
+        ------why do we use oop------
+        OOp tries to represent the real world
+        Javascript is not purely object oriented.
+
+        ------- This Keyword ------
+        The javascript (This) keyword refers to the object it belong to. it has different values
+        depending on where it is used.
+        E.g const obj = {
+            firstName: "Henry",
+            lastNmae: "Pega",
+            fullName: function () {
+                return console.log(`${this.firstName} ${this.lastName}`)
+            }
+            //But if u use the arrow function (This) keyword will come out as window
+        }
+
+        const res = obj.fullName()
+        console.log(res)
+        */
+       /////////////////////////////////////////////////////////////////////////////////////////////////
+
+       /*
+                 ---------- Factory Function -----------
+        A factory function is a type of function that is used to create and return objects.
+        E.g function createPerson(firstName, lastName, pl){
+            return  {
+                firstName,
+                lastName,
+                pl,
+                fullName: function () {
+                    console.log(`Hello my name is ${this.firstName} ${this.lastName} and 
+                    i can code with ${pl}`)
+                }
+            }
+        }
+        const res = createPerson('Henry', 'Ugwu', 'JavaScript')
+        const ress = createPerson('John', 'Doe', 'Python')
+        console.log(res.fullName())
+        console.log(ress.fullName())
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+                ---------- Constructor Function -----------
+        This are regular functions used with the (new) keyword to create and initialize objects with shared 
+        properties and methods. they act as blueprints for creating multiple instances of objects with the
+        same structure and behavior.
+        E.g function Good(firstName, lastName, pl) {
+            this.firstName = firstName,
+            this.lastName = lastName,
+            this.pl = pl,
+            this.info = function(){
+                return console.log(`Hello my name is ${firstName} ${lastName} & i love javascript`)
+            }
+          }
+
+            //(New) Keyword
+            //First create an empty object
+            //set 'this' to point to that object
+            //we can omit the return statement using 'new' keyword
+
+          const john = new Good('john', 'doe', 'python')
+          console.log(john)
+          john.info()
+
+
+          ---Exercise---
+          function Car (make, model, year, color) {
+            this.make = make
+            this.model = model,
+            this.year = year,
+            this.color = color, 
+            this.start = function(){
+                return console.log(`Starting the ${this.make} ${this.model}...`)
+            },
+            this.stop = function(){
+                return console.log(`Stopping the ${this.make} ${this.model}...`)
+            }
+          }
+
+          const car1 = Car('Mercedes', 'Benz', '2020')
+          const car2 = Car('Toyota', 'Camry', '2022')
+          car1.start()
+          car2.start()
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+                      ---------- Built in Constructor ----------
+            Also known as native constructor, are standard constructor provided by javascript that allow you
+            to create object of various data types. these constructor are available globally and do not need
+            to be explicitly defined.
+
+            E.g const num1 = new Number(10)
+                const num1 = new String('Henry')
+                const num1 = new Boolean(false)
+                const num1 = new Array(1, 2, 3)
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+                    ----------- Object.create method -----------
+            This creates a new object, using an existing object as the prototype of the newly created object.
+
+            E.g let person = {
+                greet: function(){
+                    console.log(`Hello my name is ${this.firstName} ${this.lastName}`)
+                }
+            }
+
+            const henry = Object.create(person)
+            henry.fistName = 'Henry'
+            henry.lastName = 'Pega'
+            henry.greet()
+       */ 
+      //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      /*
+            ---------------- What is class ----------------
+        This is a blueprint for an object. You can create an object from a class
+
+        How to declare a class
+        class Person {
+            constructor(firstName, lastName, age){
+                this.firstName = firstName
+                this.lastName = lastName
+                this.age = age
+                this.getUserInfo = function() {
+                    return `Name: ${this.firstName} ${this.lastName, Age: ${this.age}}`
+                }
+            }
+        }
+
+            const john = new Person('Henry', 'Ugwu', '25')
+            console.log(john.getUserInfo())
+
+            ---- Inheritance in Class ----
+
+        class Person {
+            constructor(firstName, lastName, age){
+                this.firstName = firstName
+                this.lastName = lastName
+                this.age = age
+                this.getUserInfo = function() {
+                    return `Name: ${this.firstName} ${this.lastName, Age: ${this.age}}`
+                }
+            }
+        }
+        // This will inherit everything from the Person Class
+        class Programmer extends Person{
+            Constructor(firstName, lastName, age, pl, experience){
+                super(firstName, lastName, age) //This will call parent constructor
+                this.pl = pl
+                this experience = experience
+            }
+        }
+
+            const john = new Person('Henry', 'Ugwu', 25)
+            const non = new Programmer('Nonso', 'Ugwu', 23. 'Python', 12)
+            console.log(john.getUserInfo())
+      */
+
+     ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*
+                            ---------- Modifier ----------
+            class modifier are keywords in oop that defines the visibility or accessibility of class members
+            (fields, methods, and nested classes) from other parts of the program.
+        
+            E.g function MyClass(publicfield, privatefield, protectedfield){
+                //Public field
+                this.publicfield = publicfield
+
+                //private field
+                const _privatefield = privatefield
+
+                //protected field 
+                const _protectedfield = protectedfield
+
+                //publice method
+                this.publicMetho = function(){
+                    return `Public Field: ${this.publicfield}`
+                }
+
+                //Private method
+                function _privateMethod (){
+                    return 'Private Method: ${privatefield}'
+                }
+
+                //Protected Method
+                function _protectedMethod(){
+                    return `Protected Method: ${_protectedfield}`
+                }
+
+                //Method to access private & protected method
+                this.accessProtectedMethod = function () {
+                    return _protectedMethod()
+                }
+
+                this.accessPrivateMethod = function () {
+                    return _privateMethod()
+                }
+            }
+
+            const myObject = new MyClass('Public Data', 'Private Data', 'Protected Data')
+            console.log(myObject.publicMethod())
+            console.log(myObject._privateMethod())
+            console.log(myObject._protectedMethod())
+        */
+
+
+       ////////////////////////////////////////////////////////////////////////////////////////////
+
+       /*
+                 ------------ Pillars of OOP ------------
+            1) Encapsulation
+            2) Abstraction
+            3) Inheritance
+            4) Polymorphism
+
+            ---- Encapsulation ----
+            This is a concept of bundling data (properties) and methods (function) together within an object
+            allowing the object to control access to its internal data and behaviour.
+
+            In js we can achieve encapsulation by using closures to create private members
+            E.g function Counter (){
+                let _count = 0 // private variable
+
+                this.increment = function() {
+                    _count++
+                }
+
+                this.decrement = function() {
+                    _count--
+                }
+
+                this.getCount = function() {
+                    return _count
+                }
+            }
+
+            const counter = new Counter()
+            console.log(counter.getCount())
+            counter.increment()
+            console.log(counter.getCount())
+            counter.decrement()
+            console.log(counter.getCount())
+
+
+            --------- Abstraction --------
+            This is a process of simplifying complex system by breaking them down into smaller, manageable parts.
+            In Js you can use abstract classes to define structure and then implement them in concrete object.
+
+            Abstract class (provides a blueprint for subclasses)
+
+            E.g class Animal{
+                constructor(name){
+                    this.name = name
+                }
+
+                //Abstract method (to be implemented by sub classes)
+                makeSound() {
+                    throw new Error('Method (makesound) must be implemented')
+                }
+            }
+
+            class Dog extends Animal{
+                constructor(name) {
+                    super(name)
+                }
+
+                // Implementing the Abstract Method.
+                makeSound() {
+                    return 'woof!'
+                }
+            }
+
+            //Concrete Sub Class
+            class Cat extends Animal{
+                constructor(name){
+                    super(name)
+                }
+
+                // Implementing the Abstract Method.
+                makeSound() {
+                    return 'meow!'
+                }
+            }
+
+            const dog = new Dog('tiger')
+            console.log(dog.name)
+            console.log(dog.makeSound())
+
+            const cat= new Cat('pussy')
+            console.log(dog.name)
+            console.log(dog.makeSound())
+
+
+            --------- Inheritance ---------
+        This allows a class (subclass) to inherit properties and methods from another class(superclass). This 
+        enable codes reusing and the creation of hierarchical relationships between classes.
+
+        -----ES5 way of writing Inheritance-----
+        E.g function Animal (name){
+            this.name = name
+        }
+
+        //Method shared among all Animal instances
+        Animal.prototype.makeSound = function() {
+            return 'Unknown Sound'
+        }
+
+        //subclass constructor inheriting from Animal
+        function(name) {
+            Animal.call(this, name) // calls the superclass constructor which the Animal
+        }
+
+        //setupp prototype chain for Dog to inherit from Animal
+        Dog.prototype = Object.create(Animal.prototype)
+
+        //Method specific for Dog
+        Dog.prototype.makeSound = function(){
+            return 'Woof!'
+        }
+
+        //Creating instances
+        const dog = new Dog('jasper')
+        console.log(dog.name)
+        console.log(dog.makeSound())
+
+        -----ES6 way of writing inheritance-----
+        //Superclass
+        class Animal {
+            constructor (name) {
+                this.name = name
+            }
+            makeSound(){
+                return 'unknown Sound!'
+            }
+        }
+
+        //subclass inheriting from Animal superClass
+        class Dog extends Animal {
+            constructor(name){
+                super(name)
+            }
+
+            makeSound(){
+                return 'Woof!'
+            }
+        }
+
+        const dog = new Dog('jasper')
+        console.log(dog.name)
+        console.log(dog.makeSound())
+
+
+               -------------- Polymorphism --------------
+        This allows objects to be treated as instances of their parent class, even if they are instances of a 
+        subclass. This facilitates writing codes that work with different types of object in a generic way.
+
+        In Js, polymorphism is typically achieved through the method overriding, where a subclass provides
+        its own implementation of a method that is already defined in the parent class.
+
+        E.g // Super Class
+            class Animal{
+                constructor(name){
+                    this.name = name
+                }
+
+                makeSound(){
+                    return 'Unknown Sound'
+                }
+            }
+            
+            class Dog extends Animal{
+                constructor (name) {
+                    super(name)
+                }
+
+                //  Overriding method
+                makeSound(){
+                    return 'Woof!'
+                }
+            }
+
+            function animalInfo(animal) {
+                console.log(`Name: ${animal.name})
+                console.log(`Sound: ${animal.makeSound()}`)
+            }
+
+            const dog = new Dog('jasper')
+            animalInfo(dog)
+
+       */
+    </script>
+</body>
+</html>
